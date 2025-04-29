@@ -2,6 +2,7 @@ from collections import OrderedDict
 import torch.nn as nn
 import torch
 
+# hello
 # DnCAE模型的结构
 # picture_channel代表图像通道数N，channels代表卷积层通道数C
 picture_channel = 3
