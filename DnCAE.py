@@ -41,7 +41,7 @@ def make_layer(block):
             layers.append(nn.LeakyReLU(inplace=True))
     return nn.Sequential(*layers)
 
-# picture_channel代表图像通道数N
+# picture_channel代表图像通道数N，channels代表卷积层通道数C
 picture_channel = 3
 channels = 64
 encoder_params = [
