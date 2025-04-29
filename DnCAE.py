@@ -2,6 +2,10 @@ from collections import OrderedDict
 import torch.nn as nn
 import torch
 
+# picture_channel代表图像通道数N，channels代表卷积层通道数C
+picture_channel = 3
+channels = 64
+
 class SubNet(nn.Module):
     def __init__(self, in_channels, out_channels, num_of_layers = 4):
         super().__init__()
@@ -41,9 +45,6 @@ def make_layer(block):
             layers.append(nn.LeakyReLU(inplace=True))
     return nn.Sequential(*layers)
 
-# picture_channel代表图像通道数N，channels代表卷积层通道数C
-picture_channel = 3
-channels = 64
 encoder_params = [
     [
         OrderedDict({"conv": [picture_channel,  channels, 3, 2, 1]}),
